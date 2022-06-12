@@ -26,9 +26,10 @@ class _HomePageState extends State<HomePage> {
     print(calculate(grade));
   }
 
+  var inputController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    var inputController = TextEditingController();
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -80,7 +81,9 @@ class _HomePageState extends State<HomePage> {
                   )),
               Text(
                 grade,
-                style: Theme.of(context).textTheme.headline2,
+                style: TextStyle(
+                    color: grade == "F" ? Colors.red : Colors.green,
+                    fontSize: 45),
               )
             ]),
       ),
